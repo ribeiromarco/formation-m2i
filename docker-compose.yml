@@ -1,0 +1,22 @@
+services:
+
+  node: 
+    container_name: appnode
+    ports:
+    - "3000:3000"
+    build: .
+    networks:
+      - app-network
+    depends_on:
+      - mongo
+
+  mongo:
+    container_name: mongodb
+    image: mongo:latest
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
