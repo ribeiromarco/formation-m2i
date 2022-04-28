@@ -1,7 +1,7 @@
 version: '3.8'
 services:
 
-  node: 
+  nodeapp: 
     container_name: appnode
     ports:
     - "3000:3000"
@@ -13,11 +13,13 @@ services:
     links:
       - mongo
 
-  mongo:
+  mongodb:
     container_name: mongodb
-    image: mongo:latest
+    image: mongo
     networks:
     - app-network
+    ports:
+      - 27017:27017
     restart: always
 
 networks:
