@@ -7,7 +7,7 @@ services:
     - "3000:3000"
     build: .
     networks:
-      - app-network
+    - app-network
     depends_on:
       - mongo
     links:
@@ -17,7 +17,7 @@ services:
     container_name: mongodb
     image: mongo:latest
     networks:
-      - app-network
+    - app-network
     restart: always
 
 networks:
