@@ -9,9 +9,9 @@ services:
     networks:
     - app-network
     depends_on:
-      - mongo
+      - mongodb
     links:
-      - mongo
+      - mongodb
 
   mongodb:
     container_name: mongodb
